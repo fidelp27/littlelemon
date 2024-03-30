@@ -1,0 +1,55 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="resturant, food, health">
+    <meta name="description" content="Little Lemon is a restaurant that offers a variety of dishes.">
+    <link rel="icon" href="{% static 'assets/littlelemon_favicon.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'restaurant/styles/base.css' %}">    
+    <title>Little Lemon</title>   
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'assets/logo2_littlelemon.png' %}" alt="img">
+        </div>
+        <div class="menu_item">
+            <a href="index.php">Home</a>
+            <a href="about.php">About us</a>        
+            <a href="menu.php">Menu</a>
+            <a href="about.php">Our Team</a>
+            <a href="contact.php">Contact</a>
+        </div>
+    </nav>
+    {% block contents %}  
+
+    {% endblock %} 
+    <footer>        
+        <div class="footer_item">
+            <h3 class= "h3_title">Little Lemon</h3>
+            <p class="p_subtitle">Little Lemon is a restaurant that offers a variety of dishes. We are located in the heart of the city.</p>
+        </div>
+        
+        <div class="footer_item">
+            <h3>Contact</h3>
+            <p>Address: 1234 Lemon Street, City, Country</p>
+            <p>Phone: +123 456 7890</p>
+            <div class="contact-rrss">
+                <a href="#"><img src="{% static 'assets/youtube_logo.png' %}" alt="youtube"></a>
+                <a href="#"><img src="{% static 'assets/x_logo.png' %}" alt="twitter"></a>
+                <a href="#"><img src="{% static 'assets/facebook_logo.png' %}" alt="facebook"></a>                
+                <a href="#"><img src="{% static 'assets/instagram_logo.png' %}" alt="instagram"></a>
+            </div>
+        </div>
+        <div class="footer_item">
+            <h3>Newsletter</h3>
+            <p>Savor the flavor of our kitchen secrets and stay updated with the latest news about our services</p>
+            <form action="newsletter.php" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --primary-color: #262626;
+    --secondary-color: #F29829;
+    --third-color: #A66C26;
+    --fourth-color: #F2BE5C;
+    --fifth-color: #0E16266;
+    --white-color: #F2F2F2;
+    --black-color: #2f3640;
+    --font-light: 300;
+    --font-medium: 500;
+    --font-bold: 700;
+    --title: 2.5rem;
+    --subtitle: 1.5rem;
+    --text: 1rem;
+}
+body{
+    background-color: var(--primary-color);
+}
+nav{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+nav .menu_item a{
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+    margin-right: 3rem;
+    font-size: var(--subtitle);
+}
+nav .menu_item a:hover{
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+nav .logo{
+    width: 150px;
+    height: 150px;
+}
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+footer .footer_item{
+    width: 400px;
+    height: 150px;
+    margin: 0 2rem;
+    color: var(--white-color);
+    font-size: var(--text);
+    display: flex;
+    flex-direction: column;
+}
+footer .footer_item h3{
+    font-size: var(--subtitle);
+    margin-bottom: 1rem;
+    color: var(--secondary-color)
+}
+footer .footer_item p{
+    line-height: 1.5;
+    color: var(--white-color);
+}
+footer .footer_item a{
+    color: var(--white-color);
+    text-decoration: none;
+}
+footer .footer_item a:hover{
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+footer .footer_item .contact-rrss{
+    margin-top: .5rem;
+}
+footer .footer_item .contact-rrss a{
+    margin-right: 1rem;
+}
+footer .footer_item form input{
+    width: 250px;
+    height: 30px;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5px;
+}
+footer .footer_item form button{
+    height: 30px;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    cursor: pointer;
+}   
