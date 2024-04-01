@@ -1,0 +1,44 @@
+
+{% extends "bases/base.html" %}
+{% load static %} 
+{% block contents %} 
+<section class="home">
+    <div class="home_text">
+        <div class="home_text_title">
+            <h1>Embark on a Culinary Adventure: Discover Unique Flavors and Unforgettable Experiences in Every Bite</h1>
+        </div>
+        <div class="home_text_content">
+            <p>Embark on a culinary expedition where tradition meets innovation in every dish. Experience a symphony of flavors crafted with the finest ingredients, all served in a warm, inviting atmosphere. Your journey to unforgettable dining begins here.</p>
+        </div>
+        <div class="home_text_button">
+            <a href="" class="btn">Book a table</a>
+        </div>
+    </div>
+    <div class="home_img">
+        
+    </div>
+</section>
+<section class="cards"> 
+    <div class="card">
+        <img src="{% static 'restaurant/images/chef_card.png' %}" alt="chef image">
+        <h3 class="card_title">Master Chefs</h3>
+        <p class="card_text">Meet our master chefs, the culinary artists behind every exquisite dish</p>
+    </div>
+    <div class="card">
+        <img src="{% static 'restaurant/images/eco_card.png' %}" alt="Eco friendly image">
+        <h3 class="card_title">Sustainability</h3>
+        <p class="card_text">Learn how we're committed to eco-friendly practices and sourcing local ingredients to protect the planet</p>
+    </div>
+    <div class="card">
+        <img src="{% static 'restaurant/images/quality_card.png' %}" alt="quality image">
+        <h3 class="card_title">Quality Food</h3>
+        <p class="card_text">Savor the excellence of quality food, prepared with passion and expertise</p>
+    </div>
+    <div class="card">
+        <img src="{% static 'restaurant/images/daily_special_card.png' %}" alt="daily special">
+        <h3 class="card_title">Daily Specials</h3>
+        <p class="card_text">Delight in our chef's daily creations, featuring the freshest seasonal ingredients and innovative flavors</p>
+    </div>
+</section>
+{% endblock %} 
+    
