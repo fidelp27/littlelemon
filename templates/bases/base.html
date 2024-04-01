@@ -6,7 +6,7 @@
     <meta name="keywords" content="resturant, food, health">
     <meta name="description" content="Little Lemon is a restaurant that offers a variety of dishes.">
     <link rel="icon" href="{% static 'assets/littlelemon_favicon.png'%}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'restaurant/styles/base.css' %}">    
+    <link rel="stylesheet" href="{% static 'restaurant/styles/style.css' %}">    
     <title>Little Lemon</title>   
 </head>
 <body>
@@ -15,10 +15,9 @@
             <img src="{% static 'assets/logo2_littlelemon.png' %}" alt="img">
         </div>
         <div class="menu_item">
-            <a href="index.php">Home</a>
-            <a href="about.php">About us</a>        
+            <a href="{% url 'home_restaurant' %}">Home</a>      
             <a href="menu.php">Menu</a>
-            <a href="about.php">Our Team</a>
+            <a href="about.php" class="nav_book">Book now</a>
             <a href="contact.php">Contact</a>
         </div>
     </nav>
