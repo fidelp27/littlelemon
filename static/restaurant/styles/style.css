@@ -17,7 +17,8 @@
     --font-light: 300;
     --font-medium: 500;
     --font-bold: 700;
-    --title: 2.5rem;
+    --super-title: 4rem;
+    --title: 3rem;
     --subtitle: 1.5rem;
     --nav-text: 1.2rem;
     --text: 1rem;
@@ -58,16 +59,239 @@ nav .menu_item a:hover{
     color: var(--secondary-color);
     transition: all 0.3s ease;
 }
-nav .logo{
-    width: 150px;
-    height: 150px;
+
+nav .logo img{
+    width: 120px;
+    height: 120px;
 }
+
+/* home styles */
+.home{
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem auto;
+}
+.home .home_text{
+    width: 55%;
+}
+.home .home_text h1{
+    width: 80%;
+    font-size: var(--title);
+    color: var(--white-color);
+    font-weight: var(--font-bold);
+    
+}
+.home .home_text p{
+    width: 90%;
+    font-size: var(--text);
+    color: var(--gray-color);
+    margin-top: 1rem;
+}
+.home .home_text a{
+    width: 150px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: var(--nav-text);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+}
+.home .home_text a:hover{
+    background-color: var(--third-color);
+    transition: all 0.3s ease;
+}
+.home .home_img{
+    width: 55%;
+    height: 90%;
+    background-image: url("../images/home_img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: .2rem;
+}
+/*About us styles*/
+.about{
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.about .about_text{
+    display: flex;
+    justify-content: space-around;
+}
+.about .about_text .about_text_title{
+    width: 50%;
+}
+.about .about_text .about_text_title h2{
+    font-size: var(--super-title);
+    color: var(--white-color);
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+.about .about_text .about_text_content{
+    width: 50%;
+}
+.about .about_text .about_text_content p{
+    font-size: var(--text);
+    color: var(--gray-color);
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+}
+.about .about_img{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+.about .about_img img{
+    width: calc(100% / 4 - 2rem);
+    height: 300px;
+    border-radius: .4rem;
+}
+/*Cards home*/
+.cards{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+.card{
+    width: 300px;
+    height: 220px;
+    background-color: var(--third-color);
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    line-height: 1.5;
+    margin: 1rem;
+  
+}
+
+.card img{
+    width: 50px;
+    height: 50px;
+}
+.card h3{
+    font-size: var(--subtitle);
+    color: var(--white-color);
+    margin-bottom: 1rem;
+    margin: 0;
+}
+.card p{
+    font-size: var(--text);
+    color: var(--gray-color);
+    margin: 0;
+}
+.card:hover{
+   
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* team styles */
+.team{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+.team .text_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.team .text_container .title_team{
+    width: 50%;
+}
+.team .text_container .title_team h2{
+    font-size: var(--super-title);
+    color: var(--white-color);
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+.team .text_container .text_team{
+    width: 50%;
+}
+.team .text_container .text_team p{
+    font-size: var(--text);
+    color: var(--gray-color);
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+}
+.team_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.team_card{   
+    background-color: var(--third-color);
+    border-radius: .4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    line-height: 1.5;
+    margin: 1rem;
+}
+.team_card:hover{
+    background-color: transparent;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+.team_card img{
+    width: 200px; 
+    margin-bottom: 1rem;
+    border-radius: .4rem;
+    filter:grayscale(100%);
+}
+.team_card img:hover{
+    filter:grayscale(0%);
+    transition: all 0.3s ease;
+}
+.team_card h3{
+    font-size: var(--nav-text);
+    color: var(--white-color);
+}
+.team_card p{
+    font-size: var(--text);
+    color: var(--gray-color);
+    margin: 0;
+}
+
+/*footer styles*/
 footer{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid var(--white-color);
 }
 footer .footer_item{
     width: 400px;
@@ -119,94 +343,3 @@ footer .footer_item form button{
     color: var(--white-color);
     cursor: pointer;
 }   
-/* home styles */
-.home{
-    width: 90%;
-    height: 50vh;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem auto;
-}
-.home .home_text{
-    width: 55%;
-}
-.home .home_text h1{
-    width: 80%;
-    font-size: var(--title);
-    color: var(--white-color);
-    font-weight: var(--font-bold);
-    
-}
-.home .home_text p{
-    width: 90%;
-    font-size: var(--text);
-    color: var(--gray-color);
-    margin-top: 1rem;
-}
-.home .home_text a{
-    width: 150px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-.home .home_text a:hover{
-    background-color: var(--third-color);
-    transition: all 0.3s ease;
-}
-.home .home_img{
-    width: 55%;
-    height: 100%;
-    background-image: url("../images/home_img.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: .2rem;
-}
-/*Cards home*/
-.cards{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 3rem;
-}
-.card{
-    width: 250px;
-    height: 170px;
-    background-color: var(--third-color);
-    border-radius: .4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 2rem;
-    line-height: 1.5;
-    margin: 1rem;
-}
-.card:hover{
-    background-color: var(--secondary-color);
-    transition: all 0.3s ease;
-}
-.card img{
-    width: 40px;
-    height: 40px;
-}
-.card h3{
-    font-size: var(--subtitle);
-    color: var(--white-color);
-    margin-bottom: 1rem;
-    margin: 0;
-}
-.card p{
-    font-size: var(--text-small);
-    color: var(--gray-color);
-    margin: 0;
-}
