@@ -29,6 +29,23 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+/*Alert styles*/
+.alert{
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--text);
+    font-weight: var(--font-medium);
+}
+.alert success{
+    background-color: #2ecc71;
+}
+.alert error{
+    background-color: #e74c3c;
+}
+
 /* base styles */
 nav{
     width: 90%;
@@ -37,10 +54,13 @@ nav{
     align-items: center;
     margin: 0 auto;
 }
+
+nav .menu_item{
+    display: flex;
+}
 nav .menu_item a{
     color: var(--white-color);
-    text-decoration: none;
-    
+    text-decoration: none;    
     margin-right: 3rem;
     font-size: var(--nav-text);
 }
@@ -64,7 +84,15 @@ nav .logo img{
     width: 120px;
     height: 120px;
 }
-
+nav .menu_item .welcome_text{
+    
+    display: flex;
+    color: var(--gray-color);
+    font-size: var(--nav-text);
+}
+nav .menu_item .welcome_text img{
+    margin-left: 1rem;
+}
 /* home styles */
 .home{
     width: 90%;
@@ -343,3 +371,70 @@ footer .footer_item form button{
     color: var(--white-color);
     cursor: pointer;
 }   
+/*register form styles*/
+.container_form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.container_form h2{
+    font-size: var(--title);
+    color: var(--white-color);
+    margin-bottom: 1rem;
+}
+.container_form form{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container_form form input{
+    width: 300px;
+    height: 40px;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 5px;
+}
+.container_form form p{
+    display: flex;
+    align-items: center;
+    font-size: var(--text);
+    color: var(--white-color);
+}
+.container_form form label{
+    width: 120px;
+    height: 50px;
+    font-size: var(--text);
+    color: var(--white-color);
+    margin-top: 1rem;
+}
+.container_form form span,ul{
+    display: none;
+}
+.container_form form button{
+    width: 420px;
+    height: 40px;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+.container_form form button:hover{
+    background-color: var(--third-color);
+    transition: all 0.3s ease;
+}
+.container_form .redirect_text{
+    font-size: var(--text);
+    color: var(--white-color);
+    margin-top: 1rem;
+}
+.container_form .redirect_text a{
+    color: var(--secondary-color);
+    
+}
