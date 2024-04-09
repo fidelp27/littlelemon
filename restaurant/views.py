@@ -14,7 +14,10 @@ from django.contrib import messages
 # @permission_classes([IsAuthenticated])
 def home(request):
     return render(request, 'restaurant/home.html')
-    
+
+def contact(request):
+    return render(request, 'restaurant/contact.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

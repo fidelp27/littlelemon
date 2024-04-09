@@ -18,7 +18,7 @@
             <a href="{% url 'home_restaurant' %}">Home</a>      
             <a href="menu.php">Menu</a>
             <a href="about.php" class="nav_book">Book now</a>
-            <a href="contact.php">Contact</a>
+            <a href="{%url 'contact'%}">Contact</a>
             {% if not request.user.is_authenticated %}
             <a href="{% url 'signin'%}">Login</a>
             <a href="{% url 'register'%}">Register</a>
