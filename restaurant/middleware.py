@@ -8,5 +8,5 @@ class RedirectOn404Middleware:
     def __call__(self, request):
         response = self.get_response(request)
         if response.status_code == 404:
-            return redirect(reverse('home_restaurant')) # Asegúrate de que 'home_restaurant' sea el nombre correcto de tu URL de inicio
+            return redirect(reverse('home_restaurant')) # Redirect to home page
         return response
