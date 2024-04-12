@@ -3,7 +3,7 @@ from .serializers import MenuSerializer, ReservationSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import generics, viewsets
-from .models import Menu, Reservation
+from .models import Menu, Reservation, Category
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm
@@ -39,7 +39,6 @@ def signin(request):
     if(request.method == 'POST'):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            print("entra aca")
             user = form.get_user()
             login(request, user)
             return redirect('home_restaurant')
@@ -52,6 +51,16 @@ def signin(request):
 def logoff(request):
     logout(request)
     return redirect('home_restaurant')
+
+def menu(request, category_id=None):
+    categories = Category.objects.all().filter(menu__isnull=False).distinct()
+    if category_id:
+        items = Menu.objects.filter(category__id=category_id)
+    else:
+        items = Menu.objects.all()
+    
+    return render(request, 'restaurant/menu.html', {'items': items, 'categories': categories})
+
 class MenuItemsView(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
