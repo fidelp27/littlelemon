@@ -1,5 +1,7 @@
 from django.db import models
-
+from django.utils import timezone
+from datetime import datetime
+from django.core.exceptions import ValidationError
 # Create your models here.
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
@@ -16,11 +18,34 @@ class Menu(models.Model):
     def __str__(self):
         return self.title +  " " + self.description 
 
+
+class Table(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100, default="No name")
+    no_of_seats = models.IntegerField(default=0)
+    available = models.BooleanField(default=True)
+    def __str__(self):
+        return self.name + " " + str(self.no_of_seats) + " seats"
 class Reservation(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, default="No name")
     no_of_guest = models.IntegerField(default=0)
     booking_date = models.DateField(default="2021-01-01") 
+    booking_time = models.TimeField(default="12:00:00")
+    table = models.ForeignKey(Table, on_delete=models.CASCADE, default=1)
+    
+    def clean(self):
+        reservation_date_time = timezone.make_aware(datetime.combine(self.booking_date, self.booking_time))
+        if reservation_date_time < timezone.now():
+            raise ValidationError("Reservation date and time cannot be in the past")
+        if self.no_of_guest > self.table.no_of_seats:
+            raise ValidationError("Number of guests cannot exceed the number of seats")
+        if Reservation.objects.filter(booking_date=self.booking_date, booking_time=self.booking_time, table=self.table).exists():
+            raise ValidationError("Table already reserved")
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+        
 
     def __str__(self):
-        return self.name + " " + self.booking_date + " " + self.no_of_guest + " " + self.id
+        return self.name + " " + self.booking_date 

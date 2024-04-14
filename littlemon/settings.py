@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant',
+    'littlelemonapirest',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
@@ -143,6 +144,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DJOSER={"USER_ID_FIELD":"username"}
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        # Otros renderizadores si los necesitas
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
