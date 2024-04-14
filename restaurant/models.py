@@ -24,6 +24,15 @@ class Table(models.Model):
     name = models.CharField(max_length=100, default="No name")
     no_of_seats = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
+    
+    def mark_unavailable(self):
+        self.available = False
+        self.save()
+
+    def mark_available(self):
+        self.available = True
+        self.save()
+        
     def __str__(self):
         return self.name + " " + str(self.no_of_seats) + " seats"
 class Reservation(models.Model):
@@ -43,9 +52,15 @@ class Reservation(models.Model):
         if Reservation.objects.filter(booking_date=self.booking_date, booking_time=self.booking_time, table=self.table).exists():
             raise ValidationError("Table already reserved")
     def save(self, *args, **kwargs):
-        self.clean()
+        if not self.pk:
+            self.clean()
+            self.table.mark_unavailable()
+            raise ValidationError("Table already reserved")
         super().save(*args, **kwargs)
         
-
+    def delete(self, *args, **kwargs):
+        self.table.mark_available()
+        super().delete(*args, **kwargs)
+        
     def __str__(self):
         return self.name + " " + self.booking_date 
