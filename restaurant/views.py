@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .serializers import MenuSerializer, ReservationSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import generics, viewsets
@@ -61,17 +60,5 @@ def menu(request, category_id=None):
     
     return render(request, 'restaurant/menu.html', {'items': items, 'categories': categories})
 
-class MenuItemsView(generics.ListCreateAPIView):
-    queryset = Menu.objects.all()
-    serializer_class = MenuSerializer
-    permission_classes = [IsAuthenticated]
 
-class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Menu.objects.all()
-    serializer_class = MenuSerializer
-    
-class BookingViewSet(viewsets.ModelViewSet):
-    queryset = Reservation.objects.all()
-    serializer_class = ReservationSerializer
-    permission_classes = [IsAuthenticated]
     
